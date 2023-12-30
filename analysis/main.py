@@ -1,10 +1,12 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-
+# Loading file function
 def load_file(path, skip_rows):
     df = pd.read_csv(path, skiprows=skip_rows)
     return df
 
+# Defining the filter function
 def filter_data_by_column_value(df, column, filter_list):
     filter = df[column].isin(filter_list)
     filtered_df = df[filter]
@@ -33,3 +35,9 @@ if __name__ == "__main__":
     print(eu_secondary_education_df)
     eu_tertiary_education_df = filter_data_by_column_value(tertiary_education_df, "Country Code", eu_trigrams)
     print(eu_tertiary_education_df)
+
+    # Export to CSV
+    eu_male_unemployment_df.to_csv('eu_male_unemployment.csv', index=True)
+    eu_female_unemployment_df.to_csv('eu_female_unemployment.csv', index=True)
+    eu_secondary_education_df.to_csv('eu_secondary_education.csv', index=True)
+    eu_tertiary_education_df.to_csv('eu_tertiary_education.csv', index=True)
