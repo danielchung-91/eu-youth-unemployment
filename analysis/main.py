@@ -24,9 +24,9 @@ if __name__ == "__main__":
 
     # Selecting EU countries from the data. EU countries defined as: Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus,
     # Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg,
-    # Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden and the UK.
+    # Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland and the UK.
 
-    eu_trigrams = ["AUT", "BEL", "BGR", "HRV", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LVA", "LTU", "LUX", "MLT", "NLD", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE", "GBR"]
+    eu_trigrams = ["AUT", "BEL", "BGR", "HRV", "CHE", "CYP", "CZE", "DNK", "EST", "FIN", "FRA", "DEU", "GRC", "HUN", "IRL", "ITA", "LVA", "LTU", "LUX", "MLT", "NLD", "NOR", "POL", "PRT", "ROU", "SVK", "SVN", "ESP", "SWE", "GBR"]
     eu_male_unemployment_df = filter_data_by_column_value(male_unemployment_df,"Country Code", eu_trigrams)
     print(eu_male_unemployment_df)
     eu_female_unemployment_df = filter_data_by_column_value(female_unemployment_df, "Country Code", eu_trigrams)
@@ -36,8 +36,11 @@ if __name__ == "__main__":
     eu_tertiary_education_df = filter_data_by_column_value(tertiary_education_df, "Country Code", eu_trigrams)
     print(eu_tertiary_education_df)
 
+    #Preparing dataset for timeseries
+
     # Export to CSV
-    eu_male_unemployment_df.to_csv('eu_male_unemployment.csv', index=True)
-    eu_female_unemployment_df.to_csv('eu_female_unemployment.csv', index=True)
-    eu_secondary_education_df.to_csv('eu_secondary_education.csv', index=True)
-    eu_tertiary_education_df.to_csv('eu_tertiary_education.csv', index=True)
+    # eu_male_unemployment_df.to_csv('eu_male_unemployment.csv', index=True)
+    # eu_female_unemployment_df.to_csv('eu_female_unemployment.csv', index=True)
+    # eu_secondary_education_df.to_csv('eu_secondary_education.csv', index=True)
+    # eu_tertiary_education_df.to_csv('eu_tertiary_education.csv', index=True)
+
